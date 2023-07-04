@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form </title>
+  <style>
+    .error-message {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Form with Basic Validation</h1>
+  <form id="myForm" onsubmit="validateForm(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+    <span class="error-message" id="nameError"></span>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <span class="error-message" id="emailError"></span>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" required>
+    <span class="error-message" id="phoneError"></span>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+    <span class="error-message" id="passwordError"></span>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" required>
+    <span class="error-message" id="ageError"></span>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" required>
+      <option value="">Select</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <span class="error-message" id="genderError"></span>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" required>
+    <span class="error-message" id="dateError"></span>
+
+    <label for="color">Favorite Color:</label>
+    <input type="color" id="color" required>
+    <span class="error-message" id="colorError"></span>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function validateForm(event) {
+      event.preventDefault();
+
+      // Clear previous error messages
+      const errorMessages = document.querySelectorAll('.error-message');
+      errorMessages.forEach((errorMessage) => {
+        errorMessage.textContent = '';
+      });
+
+      // Validate name field
+      const nameInput = document.getElementById('name');
+      if (nameInput.value.trim() === '') {
+        document.getElementById('nameError').textContent = 'Name is required.';
+        nameInput.focus();
+        return false;
+      }
+
+      // Validate email field
+      const emailInput = document.getElementById('email');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(emailInput.value)) {
+        document.getElementById('emailError').textContent = 'Invalid email address.';
+        emailInput.focus();
+        return false;
+      }
+
+      // Validate phone number field
+      const phoneInput = document.getElementById('phone');
+      const phonePattern = /^\d{10}$/;
+      if (!phonePattern.test(phoneInput.value)) {
+        document.getElementById('phoneError').textContent = 'Invalid phone number.';
+        phoneInput.focus();
+        return false;
+      }
+
+      // Validate password field
+      const passwordInput = document.getElementById('password');
+      if (passwordInput.value.trim() === '') {
+        document.getElementById('passwordError').textContent = 'Password is required.';
+        passwordInput.focus();
+        return false;
+      }
+
+      // Validate age field
+      const ageInput = document.getElementById('age');
+      if (isNaN(ageInput.value) || ageInput.value < 1) {
+        document.getElementById('ageError').textContent = 'Invalid age.';
+        ageInput.focus();
+        return false;
+      }
+
+      // Validate gender field
+      const genderInput = document.getElementById('gender');
+      if (genderInput.value === '') {
+        document.getElementById('genderError').textContent = 'Gender is required.';
+        genderInput.focus();
+        return false;
+      }
+
+      // Validate date field
+      const dateInput = document.getElementById('date');
+      if (dateInput.value === '') {
+        document.getElementById('dateError').textContent = 'Date is required.';
+        dateInput.focus();
+        return false;
+      }
+
+      // Validate color field
+      const colorInput = document.getElementById('color');
+      if (colorInput.value === '') {
+        document.getElementById('colorError').textContent = 'Color is required.';
+        colorInput.focus();
+        return false;
+      }
+
+      // Form validation passed, submit the form
+      document.getElementById('myForm').submit();
+    }
+  </script>
+</body>
+</html>
