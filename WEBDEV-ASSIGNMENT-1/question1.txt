@@ -1,0 +1,4 @@
+<!DOCTYPE html> is not a tag in HTML; it is called a Document Type Declaration (DTD). 
+
+The purpose of the `<!DOCTYPE html>` declaration is to inform the web browser about the version of HTML being used in the document.
+It is placed at the very beginning of an HTML document before the `<html>` tag. The declaration is case-insensitive and typically written in all uppercase letters.

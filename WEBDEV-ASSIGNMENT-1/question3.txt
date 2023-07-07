@@ -1,0 +1,13 @@
+In HTML, the terms "tags" and "elements" are often used interchangeably, but they have slightly different meanings:
+
+HTML Tags:
+Tags are the fundamental building blocks of HTML markup.
+They are used to define the structure and elements of a web page.
+Tags are written as opening and closing pairs enclosed in angle brackets (<>).
+For example, <p> is an opening tag, and </p> is the corresponding closing tag.
+Tags provide instructions to the browser on how to interpret and display the content within them.
+
+HTML Elements:
+Elements refer to the complete construct formed by an opening tag, content, and a closing tag.
+An HTML element consists of a pair of tags and the content placed between them. For example, the <p> element includes an opening <p> tag, the content (text, images, etc.), and the closing </p> tag.
+Elements can be nested within each other, creating a hierarchical structure for organizing the content.

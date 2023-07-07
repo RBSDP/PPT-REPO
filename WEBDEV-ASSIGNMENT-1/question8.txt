@@ -1,0 +1,12 @@
+<img> tag: 
+
+The <img> tag is a self-closing tag used to embed an image in an HTML document. 
+It is used to display a single image on a web page.
+The <img> tag requires the src attribute, which specifies the URL or file path of the image.
+It may also have attributes like alt, width, height, etc., for providing alternative text, specifying dimensions, or adding other image-related details.
+
+<figure> tag:
+
+The <figure> tag is a container tag used to group and caption self-contained content within an HTML document.
+It is commonly used to group images, illustrations, diagrams, videos, code snippets, etc., along with their associated captions.
+The <figure> tag can include an <img> tag or other content elements.

@@ -1,0 +1,10 @@
+Some of the advantages of HTML5 are:
+
+1)Improved Semantics.
+2)Multimedia Support
+3)Canvas and Graphics
+4)Geolocation
+5)Offline and Storage
+6)Form Enhancements
+7)Mobile Support
+8)Simplified doctype 

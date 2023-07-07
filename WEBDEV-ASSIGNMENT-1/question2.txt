@@ -1,0 +1,2 @@
+Semantic tags in HTML are elements that provide meaning and structure to the content within a web page.
+These tags describe the purpose or role of the content they enclose, making it easier for search engines, assistive technologies, and other developers to understand the document structure.
