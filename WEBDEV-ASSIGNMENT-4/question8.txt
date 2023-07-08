@@ -1,0 +1,32 @@
+
+Destructuring Objects:
+To destructure an object, you use curly braces ({}) and match the variable names to the corresponding object property names.
+
+```javascript
+const person = {
+  name: 'Alice',
+  age: 30,
+  city: 'New York'
+};
+
+const { name, age, city } = person;
+
+console.log(name); // Output: Alice
+console.log(age); // Output: 30
+console.log(city); // Output: New York
+```
+
+Destructuring Arrays:
+To destructure an array, you use square brackets ([]) and match the variable names to the corresponding positions or indices in the array.
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+const [first, second, ...rest] = numbers;
+
+console.log(first); // Output: 1
+console.log(second); // Output: 2
+console.log(rest); // Output: [3, 4, 5]
+```
+
+

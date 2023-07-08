@@ -1,0 +1,2 @@
+In ECMAScript 6 (ES6), you can define default parameter values for function parameters, which allows you to specify a default value that will be used if no argument or an undefined argument is provided when calling the function. 
+To define default parameter values, you can simply assign a value to the parameter in the function declaration.

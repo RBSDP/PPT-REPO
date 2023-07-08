@@ -1,0 +1,16 @@
+The main differences between `let` and `const` in JavaScript are as follows:
+
+1. Reassignment: Variables declared with `let` can be reassigned to a new value, while variables declared with `const` are read-only and cannot be reassigned after declaration.
+
+2. Initialization: Variables declared with `let` do not require immediate initialization. They can be declared without an initial value, and assigned a value later in the code. 
+    Variables declared with `const` must be initialized at the time of declaration, and cannot be left uninitialized.
+
+3. Scope: Both `let` and `const` have block scope, meaning they are limited to the block where they are defined. They are not accessible outside of the block in which they are declared.
+
+4. Hoisting: Both `let` and `const` are hoisted to the top of their scope, but unlike variables declared with `var`, they remain in the "temporal dead zone" until their actual declaration is encountered. Accessing variables in the temporal dead zone before their declaration results in a `ReferenceError`.
+
+5. Immutable Binding: Variables declared with `const` are immutable, meaning their value cannot be changed once assigned. However, it's important to note that for objects and arrays declared with `const`, the properties or elements within them can still be mutated.
+
+6. Global Object: Variables declared with `let` are not added to the global object (`window` object in browsers), while variables declared with `const` are also not added to the global object. This behavior is different from variables declared with `var`, which are added to the global object.
+
+

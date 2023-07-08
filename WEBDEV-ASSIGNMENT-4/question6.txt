@@ -1,0 +1,2 @@
+Template literals, introduced in ECMAScript 6 (ES6), provide a convenient way to create strings with embedded expressions.
+ They are enclosed within backticks ( ) instead of single or double quotes. Template literals support multiline strings and allow expressions to be interpolated directly into the string.

@@ -1,0 +1,11 @@
+ECMAScript 6 (ES6), also known as ECMAScript 2015, introduced several major features and enhancements to the JavaScript language. Some of the key features are:
+
+1. let and const Declarations: Introduced block-scoped variables with `let` and immutable variables with `const`.
+
+2. Arrow Functions: Introduced a concise syntax for defining functions using the `=>` arrow notation, providing lexical scoping of `this` and shorter function syntax.
+
+3. Classes: Introduced class syntax for creating objects with constructors, methods, and inheritance.
+
+4. Modules: Added support for modular JavaScript with the `import` and `export` keywords, allowing code to be organized into separate files.
+
+5. Enhanced Object Literals: Added shorthand notations for defining object properties, computed property names, and method definitions within object literals.

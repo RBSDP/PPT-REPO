@@ -1,0 +1,4 @@
+The forEach() method does not returns a new array based on the given array.
+The map() method returns an entirely new array.
+The forEach() method returns “undefined“.
+The map() method returns the newly created array according to the provided callback function.
