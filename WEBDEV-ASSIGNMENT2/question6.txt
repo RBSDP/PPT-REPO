@@ -1,0 +1,13 @@
+The z-index property in CSS controls the stacking order of positioned elements on the z-axis, determining which elements appear on top of others.
+
+The z-index property accepts integer values and works as follows:
+
+1. Elements with a higher z-index value are stacked above elements with a lower value.
+2. If two elements have the same z-index, the one appearing later in the HTML markup will be stacked on top.
+3. By default, elements have a z-index of auto, which means they stack in the order they appear in the HTML.
+
+For z-index to work, the element must have a position value other than static. Common position values used with z-index are relative, absolute, and fixed. These position values establish a new stacking context for the element and its descendants.
+
+When stacking elements, it's important to consider that the z-index property only affects elements within the same stacking context. Elements outside of a stacking context will not be affected by the z-index of elements inside it.
+
+By manipulating the z-index values of elements, you can control their overlapping behavior and create layered layouts, allowing certain elements to appear above or below others visually.

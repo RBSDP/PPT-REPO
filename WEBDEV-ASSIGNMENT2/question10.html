@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin: 20px 20px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .head{
+            display: flex;
+        }
+        .head-left{
+            margin: 2px;
+            background-color: blue;
+            height: 20vh;
+            width: 30%;
+        }
+        .head-right{
+            margin: 2px;
+            background-color: gray;
+            height: 20vh;
+            width: 70%;
+        }
+        .content{
+            margin-top: 20px;
+            background-color: gray;
+            height: 60vh;
+            width: 100%;
+        }
+
+        .cards{
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+
+            
+        }
+        .card{
+            
+           
+            height: 300px ;
+            background-color: black;
+        }
+        .content1{
+            margin-top: 20px;
+            background-color: gray;
+            height: 60vh;
+            width: 100%;
+        }
+
+
+
+
+        @media screen and (max-width:800px){
+    
+   
+    .cards{
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+
+            
+        }
+        .content{
+            margin-top: 10px;
+            background-color: gray;
+            height: 40vh;
+            width: 100%;
+        }
+        .card{
+            
+           
+            height: 150px ;
+            background-color: black;
+        }
+        .content1{
+            margin-top: 10px;
+            background-color: gray;
+            height: 40vh;
+            width: 100%;
+        }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="head">
+            <div class="head-left">
+
+            </div>
+            <div class="head-right">
+
+            </div>
+        </div>
+    </header>
+
+    <div class="content">
+        <div>
+
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="card"></div>
+        <div class = "card"></div>
+        <div class= "card"></div>
+    </div>
+    <div class="content1">
+        <div>
+
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+    height: 40px;
+}
+
+abbr {
+    text-decoration: none !important;
+}
+
+td {
+    height: 15px;
+    width: 200px;
+}
+th{
+    border: none;
+   
+}
+
+table {
+    margin: 30px;
+}
+

@@ -1,0 +1,3 @@
+The main difference between border-box and content-box is how they handle sizing calculations.
+border-box simplifies the process by considering the overall dimensions of the element, including padding and border, while content-box focuses solely on the content area. 
+Using border-box can make it more intuitive to control the size and layout of elements, especially when dealing with padding and border properties.

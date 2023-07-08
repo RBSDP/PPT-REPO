@@ -1,0 +1,4 @@
+The Box Model in CSS is a fundamental concept that describes how elements are rendered on a web page.
+It consists of four layers: content, padding, border, and margin.
+The content layer holds the actual content of the element, while the padding adds space around the content.
+The border layer defines a visible border around the element, and the margin creates space between elements.
