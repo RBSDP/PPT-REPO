@@ -1,0 +1,7 @@
+To define a media query in CSS, you use the @media rule followed by a media type and one or more media features.
+The media type and media features specify the conditions under which the styles within the media query will be applied.
+Here's the general syntax:
+
+@media mediaType and (mediaFeature1: value1) and (mediaFeature2: value2) {
+    /* CSS styles to apply */
+}

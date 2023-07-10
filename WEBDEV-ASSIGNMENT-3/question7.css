@@ -1,0 +1,41 @@
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.main-box{
+    border: 5px solid;
+    
+}
+.fle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.images{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.image{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    
+    border-radius: 5px;
+    
+}
+.main-img{
+    border-radius: 20px;
+    border: 2px solid;
+}
+
+
+@media screen and (max-width:800px){
+    .images{
+        display: grid;
+        grid-template-columns: 1fr ;
+    }
+}
