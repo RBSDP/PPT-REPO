@@ -1,0 +1,42 @@
+To define an asynchronous function in JavaScript using `async/await`, you declare a function with the `async` keyword.
+The `async` keyword signifies that the function will contain asynchronous code and will always return a Promise.
+
+Here's the syntax for defining an asynchronous function:
+
+```javascript
+async function functionName() {
+  // Asynchronous code
+}
+```
+
+Within an asynchronous function, you can use the `await` keyword to pause the execution of the function until a Promise settles.
+The `await` keyword can only be used inside an `async` function.
+It waits for the Promise to be fulfilled and then returns the resolved value.
+If the Promise is rejected, an error will be thrown.
+
+Here's an example of an asynchronous function that uses `await`:
+
+```javascript
+async function getData() {
+  try {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+}
+```
+
+In the example above:
+
+1. The `getData` function is declared as an asynchronous function using the `async` keyword.
+
+2. Inside the function, the `await` keyword is used to pause the execution at specific points where promises are being awaited. In this case, `await` is used with the `fetch()` function to wait for the response to be resolved before proceeding.
+
+3. Once the response is obtained, `await` is used again with `response.json()` to wait for the JSON parsing to complete.
+
+4. The resolved data is returned from the function.
+
+5. If any error occurs during the execution of `fetch()` or `response.json()`, the `catch` block is executed, and the error is logged.

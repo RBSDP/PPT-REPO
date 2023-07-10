@@ -1,0 +1,37 @@
+`setTimeout` and `setInterval` are functions commonly used in JavaScript to schedule the execution of code at specified intervals or after a certain delay. Here's an explanation of each:
+
+1. **setTimeout:**
+The `setTimeout` function is used to execute a piece of code (a callback function) after a specified delay. It takes two parameters: the callback function to be executed and the delay in milliseconds. Here's the syntax:
+
+```javascript
+setTimeout(callback, delay);
+```
+
+After the specified delay, the JavaScript runtime environment will execute the callback function once. For example, if you want to display a message after 2 seconds:
+
+```javascript
+setTimeout(() => {
+  console.log("Delayed message");
+}, 2000);
+```
+
+The callback function can also take arguments if needed. `setTimeout` returns a unique identifier (a timer ID), which can be used to cancel the execution before the delay is over using the `clearTimeout` function.
+
+2. **setInterval:**
+The `setInterval` function is used to repeatedly execute a piece of code (a callback function) at a specified interval. It takes two parameters: the callback function to be executed and the interval in milliseconds. Here's the syntax:
+
+```javascript
+setInterval(callback, interval);
+```
+
+The callback function will be executed repeatedly, with each execution occurring after the specified interval. For example, if you want to display a message every 1 second:
+
+```javascript
+setInterval(() => {
+  console.log("Repeated message");
+}, 1000);
+```
+
+Similarly to `setTimeout`, the callback function can take arguments. The `setInterval` function also returns a timer ID, which can be used to cancel the repeated execution using the `clearInterval` function.
+
+Both `setTimeout` and `setInterval` are commonly used for various purposes, such as implementing animations, scheduling periodic updates, or triggering specific actions after a certain delay. It's important to manage and cancel timers appropriately to avoid unnecessary or unintended executions.

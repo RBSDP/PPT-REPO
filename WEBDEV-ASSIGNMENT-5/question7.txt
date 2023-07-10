@@ -1,0 +1,35 @@
+The `async` and `await` keywords are part of the JavaScript language and provide a more concise and readable way to work with asynchronous code.
+They were introduced in ECMAScript 2017 (ES8) and built on top of Promises.
+
+*`async`:** The `async` keyword is used to declare an asynchronous function.
+It allows the function to use the `await` keyword inside its body.
+An asynchronous function always returns a Promise, resolving with the value returned by the function or rejecting with an error thrown within the function.
+Here's an example:
+
+```javascript
+async function fetchData() {
+  // Asynchronous operations
+  return result; // Resolves the Promise with 'result'
+}
+```
+
+**`await`:** The `await` keyword can only be used inside an `async` function.
+It is used to pause the execution of the function until a Promise is fulfilled or rejected.
+It allows you to write asynchronous code that looks and behaves like synchronous code, improving code readability.
+The `await` keyword is followed by a Promise, and it waits for the Promise to settle (fulfilled or rejected) before proceeding.
+Here's an example:
+
+```javascript
+async function processData() {
+  const result = await fetchData(); // Wait for the Promise to be resolved
+  // Continue execution after the Promise is resolved
+}
+```
+
+The `await` expression suspends the execution of the `async` function until the awaited Promise settles.
+While waiting, the event loop is free to handle other tasks, making the code non-blocking.
+If the Promise is fulfilled, the value of the fulfillment is returned.
+If the Promise is rejected, an error is thrown, which can be caught using a `try/catch` block.
+
+Using `async` and `await` allows you to write asynchronous code in a more sequential and synchronous-like manner, which can make it easier to understand and maintain.
+It eliminates the need for explicit Promise chaining with `.then()` and `.catch()`, resulting in flatter and more readable code.

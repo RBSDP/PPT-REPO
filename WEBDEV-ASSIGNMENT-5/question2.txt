@@ -1,0 +1,25 @@
+Web APIs (Application Programming Interfaces) are a set of protocols and tools that allow different software applications to communicate and interact with each other over the internet.
+They provide a standardized way for applications to request and exchange data or functionality.
+
+Web APIs are commonly used in web development to enable communication between a client-side application (such as a web browser or mobile app) and a server-side application or service.
+They allow developers to access and manipulate data or perform specific actions provided by the server.
+
+Here are a few key points about web APIs:
+
+Data Exchange:
+Web APIs enable the exchange of data between different systems. The server-side application exposes a set of endpoints (URLs) that the client-side application can access to retrieve or manipulate data.
+
+Standardized Protocols:
+Web APIs typically use standard protocols such as HTTP (Hypertext Transfer Protocol) for communication.
+This allows applications developed in different programming languages and running on different platforms to interact with each other seamlessly.
+
+Request-Response Model: 
+Web APIs follow a request-response model, where the client sends a request to the server, and the server responds with the requested data or performs the requested action.
+The request and response are often in formats like JSON (JavaScript Object Notation) or XML (eXtensible Markup Language).
+
+Functionality and Services:
+Web APIs can provide a wide range of functionalities and services. They can be used for retrieving and manipulating data (such as accessing a database or retrieving weather information), performing actions (such as sending emails or processing payments), or integrating with external services (such as social media platforms or payment gateways).
+
+RESTful APIs:
+REST (Representational State Transfer) is a commonly used architectural style for designing web APIs.
+RESTful APIs adhere to certain principles, such as using HTTP methods (GET, POST, PUT, DELETE) to represent different operations and utilizing the appropriate HTTP status codes to indicate the outcome of a request.

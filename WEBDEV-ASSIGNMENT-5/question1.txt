@@ -1,0 +1,18 @@
+Synchronous and asynchronous are two different modes of communication or execution in various systems, including computer programming and telecommunications.
+Here's an explanation of the differences between the two:
+
+Synchronous:
+- In synchronous communication or execution, the sender and receiver are in direct coordination with each other.
+- It follows a request-response model, where the sender sends a request, and the receiver waits for the response before proceeding further.
+- The sender and receiver must be available and actively engaged during the communication or execution process.
+- Synchronous communication is typically blocking, meaning that the sender will be blocked or halted until it receives a response from the receiver.
+- Examples of synchronous communication include phone calls, face-to-face conversations, and traditional client-server interactions.
+
+Asynchronous:
+- In asynchronous communication or execution, the sender and receiver are not required to be actively engaged at the same time.
+- It does not follow a strict request-response model, and the sender does not wait for an immediate response.
+- The sender can continue with other tasks without waiting for the receiver's response.
+- Asynchronous communication is typically non-blocking, meaning that the sender does not get blocked while waiting for a response.
+- It is often used when there is a time delay, unreliable connections, or when the sender and receiver operate at different speeds or on different schedules.
+- Examples of asynchronous communication include email, text messaging, and message queues in programming.
+
