@@ -1,0 +1,131 @@
+Object-Oriented Programming (OOP) is a programming paradigm that organizes code around objects and their interactions.
+JavaScript supports OOP concepts through its prototype-based inheritance model.
+Here's an explanation of key OOP concepts in JavaScript:
+
+1. Objects: Objects are the fundamental building blocks in JavaScript.
+They are instances of classes or prototypes and can contain properties (variables) and methods (functions).
+Objects encapsulate data and behavior related to a specific entity. Example:
+
+```javascript
+const person = {
+  name: "John",
+  age: 30,
+  greet: function() {
+    console.log("Hello, " + this.name);
+  }
+};
+
+console.log(person.name); // Outputs: John
+person.greet(); // Outputs: Hello, John
+```
+
+2. Classes: In modern JavaScript, classes are used to create objects.
+A class is a blueprint for creating objects with predefined properties and methods.
+Classes encapsulate related data and behavior. Example:
+
+```javascript
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log("Hello, " + this.name);
+  }
+}
+
+const person = new Person("John", 30);
+console.log(person.name); // Outputs: John
+person.greet(); // Outputs: Hello, John
+```
+
+3. Inheritance: Inheritance allows objects to inherit properties and methods from other objects.
+JavaScript uses prototype-based inheritance, where objects can have a prototype object from which they inherit.
+The prototype object can be another object or the prototype of a class.
+Example:
+
+```javascript
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  eat() {
+    console.log(this.name + " is eating.");
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    console.log("Woof!");
+  }
+}
+
+const dog = new Dog("Buddy");
+dog.eat(); // Outputs: Buddy is eating.
+dog.bark(); // Outputs: Woof!
+```
+
+4. Encapsulation: Encapsulation is the bundling of data and methods together within an object, hiding internal details and providing a public interface for interacting with the object.
+JavaScript objects and classes support encapsulation through the use of public and private properties/methods.
+However, JavaScript does not have built-in access modifiers like private or protected. Example:
+
+```javascript
+class BankAccount {
+  #balance = 0; // Private property
+
+  deposit(amount) {
+    this.#balance += amount;
+  }
+
+  withdraw(amount) {
+    if (amount <= this.#balance) {
+      this.#balance -= amount;
+    } else {
+      console.log("Insufficient balance.");
+    }
+  }
+
+  getBalance() {
+    return this.#balance;
+  }
+}
+
+const account = new BankAccount();
+account.deposit(1000);
+console.log(account.getBalance()); // Outputs: 1000
+account.withdraw(500);
+console.log(account.getBalance()); // Outputs: 500
+```
+
+5. Polymorphism: Polymorphism allows objects of different types to be treated as objects of a common superclass.
+In JavaScript, polymorphism is achieved through the ability to override methods in subclasses or provide different implementations for the same method across different objects. Example:
+
+```javascript
+class Shape {
+  calculateArea() {
+    console.log("Calculating area of a generic shape.");
+  }
+}
+
+class Rectangle extends Shape {
+  calculateArea() {
+    console.log("Calculating area of a rectangle.");
+  }
+}
+
+class Circle extends Shape {
+  calculateArea() {
+    console.log("Calculating area of a circle.");
+  }
+}
+
+const rectangle = new Rectangle();
+rectangle.calculateArea(); // Outputs: Calculating area of a rectangle.
+
+const circle = new Circle();
+circle.calculateArea(); // Outputs: Calculating area of a circle.
+```
+
+Object-Oriented Programming provides a way to structure code, promote reusability, and model real-world entities. JavaScript's prototype-based approach to OOP offers flexibility and dynamic behavior in creating and interacting with objects.

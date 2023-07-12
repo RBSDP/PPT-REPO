@@ -1,0 +1,59 @@
+In JavaScript, the `call`, `apply`, and `bind` methods are used to manipulate the value of the `this` keyword in a function and control how it is invoked.
+Here's an explanation of each method and their differences:
+
+1. `call`: The `call` method is a built-in function in JavaScript that allows you to invoke a function with a specified `this` value and arguments passed individually.
+The syntax of the `call` method is as follows: `function.call(thisArg, arg1, arg2, ...)`.
+The `thisArg` parameter is the value to be used as the `this` value within the function, and the subsequent arguments are passed to the function as individual values. Example:
+
+```javascript
+function greet() {
+  console.log("Hello, " + this.name);
+}
+
+const person = {
+  name: "John"
+};
+
+greet.call(person); // Outputs: Hello, John
+```
+
+2. `apply`: The `apply` method is similar to `call`, but it accepts the `this` value as the first argument and an array or array-like object as the second argument, which contains the arguments to be passed to the function.
+The syntax of the `apply` method is as follows: `function.apply(thisArg, [argsArray])`.
+
+Example:
+
+```javascript
+function greet(greeting) {
+  console.log(greeting + ", " + this.name);
+}
+
+const person = {
+  name: "John"
+};
+
+greet.apply(person, ["Hello"]); // Outputs: Hello, John
+```
+
+3. `bind`: The `bind` method creates a new function that is bound to a specific `this` value. It does not immediately invoke the function but returns a new function with the `this` value set, which can be called later.
+The syntax of the `bind` method is as follows: `function.bind(thisArg, arg1, arg2, ...)`.
+The `thisArg` parameter is the value to be used as the `this` value, and additional arguments can be provided that are pre-set for the bound function.
+
+Example:
+
+```javascript
+function greet(greeting) {
+  console.log(greeting + ", " + this.name);
+}
+
+const person = {
+  name: "John"
+};
+
+const greetPerson = greet.bind(person);
+greetPerson("Hello"); // Outputs: Hello, John
+```
+
+The main difference between `call` and `apply` is the way arguments are passed to the function.
+`call` expects individual arguments, while `apply` takes an array or array-like object of arguments.
+The `bind` method returns a new function with the bound `this` value, which can be invoked later.
+

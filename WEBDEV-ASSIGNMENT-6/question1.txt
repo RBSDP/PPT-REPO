@@ -1,0 +1,11 @@
+A constructor is a special method or function in object-oriented programming languages that is used for initializing objects.
+It is called automatically when an object is created from a class and is responsible for setting the initial state of the object.
+
+The purpose of a constructor is to perform tasks such as allocating memory for the object, initializing member variables, and performing any necessary setup or initialization steps.
+Constructors ensure that objects are properly initialized before they are used.
+
+Constructors have the same name as the class they belong to and do not have a return type, not even void.
+They can have parameters to accept values that are used to initialize the object's state. Constructors can be overloaded, meaning a class can have multiple constructors with different parameter lists, allowing objects to be created in different ways.
+
+By using constructors, you can ensure that objects are created with valid initial values and that any necessary setup is performed consistently.
+Constructors play a crucial role in object-oriented programming as they enable the creation of objects and define how they are initialized.

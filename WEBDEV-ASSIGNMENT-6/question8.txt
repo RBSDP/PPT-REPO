@@ -1,0 +1,85 @@
+Encapsulation is a fundamental concept in object-oriented programming that involves bundling data and related behavior (methods) within an object, while hiding the internal implementation details. It allows objects to have control over their data and provides a public interface through which other objects can interact with them. The purpose of encapsulation is to promote data integrity, code organization, and information hiding.
+
+In JavaScript, encapsulation can be achieved through various techniques:
+
+1. Object Literals: JavaScript allows you to define objects using object literals, which encapsulate related data and behavior within a single object. Properties and methods can be defined directly within the object literal, providing a clear structure and encapsulating data within the object. Example:
+
+```javascript
+const person = {
+  name: "John",
+  age: 30,
+  getDetails: function() {
+    return this.name + " is " + this.age + " years old.";
+  }
+};
+
+console.log(person.name); // Outputs: John
+console.log(person.getDetails()); // Outputs: John is 30 years old.
+```
+
+2. Constructor Functions and Classes: In JavaScript, you can encapsulate data and behavior within objects by using constructor functions or classes. Properties and methods are defined within the constructor function or class, and instances of objects are created using the `new` keyword. This provides a blueprint for creating objects with encapsulated data and behavior. Example:
+
+```javascript
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+
+  this.getDetails = function() {
+    return this.name + " is " + this.age + " years old.";
+  };
+}
+
+const person = new Person("John", 30);
+console.log(person.name); // Outputs: John
+console.log(person.getDetails()); // Outputs: John is 30 years old.
+```
+
+3. Getters and Setters: JavaScript provides getters and setters, which allow you to control access to object properties and perform additional actions when getting or setting values. Getters and setters encapsulate the internal representation of a property and provide a controlled interface for interacting with the property. Example:
+
+```javascript
+class Person {
+  constructor(name, age) {
+    this._name = name;
+    this._age = age;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(newName) {
+    this._name = newName;
+  }
+
+  get age() {
+    return this._age;
+  }
+
+  set age(newAge) {
+    if (newAge >= 0) {
+      this._age = newAge;
+    }
+  }
+}
+
+const person = new Person("John", 30);
+console.log(person.name); // Outputs: John
+person.name = "Jane";
+console.log(person.name); // Outputs: Jane
+
+console.log(person.age); // Outputs: 30
+person.age = -5;
+console.log(person.age); // Still outputs: 30 (age not updated due to validation)
+```
+
+The purpose of encapsulation in JavaScript and other programming languages is to achieve the following goals:
+
+1. Data Integrity: Encapsulation helps ensure that the internal state of an object remains consistent by providing controlled access to its properties. By encapsulating data and providing methods to interact with it, you can enforce validation rules and maintain the integrity of the data.
+
+2. Information Hiding: Encapsulation allows you to hide the internal implementation details of an object and expose only a public interface. This provides abstraction and prevents external code from directly manipulating or relying on internal implementation details, making it easier to change the internal workings of an object without affecting other parts of the codebase.
+
+3. Code Organization and Reusability: Encapsulation promotes modular code organization by bundling related data and behavior within an object. It allows for reusable code as objects with encapsulated behavior can be easily instantiated and used in different parts of the codebase.
+
+4. Code Maintenance and Extensibility: Encapsulation isolates changes to an object's internal implementation, reducing the impact on other parts of the code. It provides a clear separation between the public interface and internal implementation, making it easier to maintain and extend the codebase over time.
+
+Encapsulation is a crucial principle in object-oriented programming as it helps create more robust, maintainable, and secure code by encapsulating data and behavior within objects and providing controlled access to them.

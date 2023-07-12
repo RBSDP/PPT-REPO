@@ -1,0 +1,55 @@
+Inheritance is a fundamental concept in object-oriented programming that allows objects to acquire properties and methods from a parent or superclass.
+It enables code reuse and promotes a hierarchical relationship between classes, where subclasses inherit and extend the behavior of their parent class.
+
+In JavaScript, inheritance is implemented through prototype-based inheritance, as JavaScript does not have built-in support for class-based inheritance. 
+Here's an explanation of inheritance and its purpose in JavaScript:
+
+1. Prototype-based Inheritance: JavaScript objects have an internal `[[Prototype]]` property that can refer to another object, known as the prototype object. 
+When a property or method is accessed on an object, and it is not found, JavaScript looks up the prototype chain to find the property or method in the prototype objects.
+
+2. Creating Subclasses: In JavaScript, you can create subclasses by setting the prototype of a constructor function or an object to be an instance of another constructor function or object. 
+This establishes an inheritance relationship where the subclass inherits the properties and methods of the superclass.
+
+3. Extending Functionality: Inheritance allows subclasses to extend the functionality of the superclass by adding their own properties and methods or overriding the ones inherited from the superclass. 
+This promotes code reuse and avoids duplicating code across multiple classes.
+
+4. Code Organization and Modularity: Inheritance helps organize code hierarchically, allowing you to define common behaviors and properties in a superclass and specialize or customize them in subclasses. 
+This promotes modularity, as related functionality can be grouped together in a hierarchical manner.
+
+5. Polymorphism: Inheritance is closely related to polymorphism, where objects of different types can be treated as objects of a common superclass or interface. 
+In JavaScript, subclass objects can be used interchangeably with superclass objects, allowing for flexible and generic coding.
+
+Here's an example of inheritance in JavaScript:
+
+```javascript
+function Animal(name) {
+  this.name = name;
+}
+
+Animal.prototype.eat = function() {
+  console.log(this.name + " is eating.");
+};
+
+function Dog(name, breed) {
+  Animal.call(this, name);
+  this.breed = breed;
+}
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+Dog.prototype.bark = function() {
+  console.log("Woof!");
+};
+
+const dog = new Dog("Buddy", "Labrador");
+dog.eat(); // Outputs: Buddy is eating.
+dog.bark(); // Outputs: Woof!
+```
+
+In this example, the `Dog` class inherits from the `Animal` class. The `Dog` class extends the behavior of the `Animal` class by adding the `bark` method. 
+The `Dog` class also invokes the `Animal` constructor using `Animal.call(this, name)` to initialize the `name` property inherited from the `Animal` class.
+
+The purpose of inheritance is to promote code reuse, modularity, and extensibility. 
+It allows you to define common behaviors and properties in a superclass and create specialized subclasses that inherit and extend the functionality of the superclass. 
+Inheritance is a powerful mechanism for creating hierarchies of related classes and organizing code in a structured and maintainable way.

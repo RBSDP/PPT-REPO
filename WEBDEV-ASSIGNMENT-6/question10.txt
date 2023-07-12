@@ -1,0 +1,52 @@
+In JavaScript, the `super` keyword is used to call functions on an object's parent or superclass. It provides a way to access and call functions defined in the parent class from within a subclass. The `super` keyword is often used in the constructor and methods of a subclass to invoke the corresponding functions or constructors of the superclass.
+
+Here's how the `super` keyword works and what it does in JavaScript:
+
+1. In the Constructor:
+   When defining a constructor in a subclass, the `super` keyword is used to call the constructor of the parent class. It allows the subclass to inherit and initialize the properties defined in the parent class. The `super` keyword must be called before accessing `this` in the constructor of a subclass. Example:
+
+```javascript
+class Parent {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+class Child extends Parent {
+  constructor(name, age) {
+    super(name); // Calls the constructor of the Parent class
+    this.age = age;
+  }
+}
+
+const child = new Child("John", 10);
+console.log(child.name); // Outputs: John
+console.log(child.age); // Outputs: 10
+```
+
+In the above example, the `Child` class extends the `Parent` class. The `super(name)` call in the `Child` class constructor invokes the constructor of the `Parent` class and initializes the `name` property.
+
+2. In Methods:
+   The `super` keyword can also be used to call methods defined in the parent class from within methods of the subclass. This allows the subclass to inherit and extend the behavior defined in the parent class. Example:
+
+```javascript
+class Parent {
+  greet() {
+    console.log("Hello from Parent");
+  }
+}
+
+class Child extends Parent {
+  greet() {
+    super.greet(); // Calls the greet() method of the Parent class
+    console.log("Hello from Child");
+  }
+}
+
+const child = new Child();
+child.greet();
+```
+
+In the above example, the `Child` class extends the `Parent` class. The `super.greet()` call in the `greet()` method of the `Child` class invokes the `greet()` method of the `Parent` class before logging "Hello from Child" to the console.
+
+The `super` keyword plays a crucial role in ensuring proper inheritance and allows subclasses to access and invoke functions defined in their parent classes. It provides a way to extend and customize the behavior of the parent class while retaining the inherited functionality.
