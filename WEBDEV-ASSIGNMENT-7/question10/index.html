@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List App</title>
+  <style>
+
+    body{
+        background-color: #344FA1;
+    }
+    h1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .task-item {
+      margin-bottom: 10px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .task-item.completed button {
+background-color: yellow;
+}
+
+.task-item button {
+  background-color: lightgreen;
+  }
+    .task-item .task-description {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .task-item .status {
+      font-weight: bold;
+    }
+
+    .edit-form {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .edit-form input {
+      margin-right: 5px;
+    }
+
+    .edit-form button {
+      margin-right: 5px;
+    }
+    .main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #newTaskInput{
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        width: 300px;
+    }
+    .main-btn{
+        height: 50px;
+        background-color: #CE18EC;
+        border: none;
+        border-radius: 15px;
+        width: 200px;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+   #taskList{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-top: 30px;
+   }
+   #taskList div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+   }
+   button{
+    height: 50px;
+        background-color: #CE18EC;
+        border: none;
+        border-radius: 15px;
+        width: 200px;
+        cursor: pointer;
+   }
+
+  </style>
+</head>
+<body>
+  <h1>Todo List App</h1>
+  
+  <div class="main">
+    <input type="text" id="newTaskInput" placeholder="     To do app">
+    <button onclick="addTask()" class="main-btn">Add Task</button>
+  </div>
+  
+  <div id="taskList"></div>
+
+  <script>
+    const taskList = document.getElementById("taskList");
+    const newTaskInput = document.getElementById("newTaskInput");
+    const tasks = [];
+
+    function addTask() {
+      const taskDescription = newTaskInput.value;
+      if (taskDescription.trim() === "") {
+        alert("Please enter a task description.");
+        return;
+      }
+
+      const task = {
+        description: taskDescription,
+        completed: false
+      };
+
+      tasks.push(task);
+      renderTasks();
+      newTaskInput.value = "";
+    }
+
+    function toggleComplete(index) {
+      tasks[index].completed = !tasks[index].completed;
+      renderTasks();
+    }
+
+    function editTask(index) {
+      const taskItem = document.getElementById(`taskItem-${index}`);
+      const taskDescription = document.getElementById(`taskDescription-${index}`);
+      const editForm = document.getElementById(`editForm-${index}`);
+      const editInput = document.getElementById(`editInput-${index}`);
+
+      taskDescription.style.display = "none";
+      editForm.style.display = "block";
+      editInput.value = tasks[index].description;
+      editInput.focus();
+    }
+
+    function updateTask(index) {
+      const editInput = document.getElementById(`editInput-${index}`);
+      const newDescription = editInput.value;
+
+      if (newDescription.trim() === "") {
+        alert("Please enter a task description.");
+        return;
+      }
+
+      tasks[index].description = newDescription;
+      renderTasks();
+    }
+
+    function closeEditForm(index) {
+      const taskDescription = document.getElementById(`taskDescription-${index}`);
+      const editForm = document.getElementById(`editForm-${index}`);
+
+      taskDescription.style.display = "inline-block";
+      editForm.style.display = "none";
+    }
+
+    function removeTask(index) {
+      tasks.splice(index, 1);
+      renderTasks();
+    }
+
+    function renderTasks() {
+      taskList.innerHTML = "";
+
+      tasks.forEach((task, index) => {
+        const taskItem = document.createElement("div");
+        taskItem.id = `taskItem-${index}`;
+        taskItem.className = "task-item" + (task.completed ? " completed" : "");
+        taskItem.style.backgroundColor = "#031956"
+        taskItem.style.color = "#fff"
+        taskItem.style.width = "300px"
+        
+        
+
+        const taskDescription = document.createElement("span");
+        taskDescription.id = `taskDescription-${index}`;
+        taskDescription.className = "task-description";
+        taskDescription.textContent = task.description;
+        taskDescription.style.display = "block"
+        taskDescription.style.margin = "auto"
+
+
+        const status = document.createElement("span");
+        status.className = "status";
+        status.textContent = task.completed ? "Completed" : "Pending";
+
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.addEventListener("click", () => removeTask(index));
+        removeButton.style.display = "block"
+        removeButton.style.display = "block"
+        removeButton.style.width = "150px"
+        removeButton.style.marginTop = "10px"
+        removeButton.style.backgroundColor="#fff"
+        removeButton.style.color="black"
+        removeButton.style.height = "30px"
+        removeButton.style.borderRadius = "10px"
+        removeButton.style.border = "none"
+
+        const completeButton = document.createElement("button");
+        completeButton.textContent = task.completed ? "Mark Pending" : "Mark Completed";
+        completeButton.addEventListener("click", () => toggleComplete(index));
+        completeButton.style.display = "block"
+        completeButton.style.width = "150px"
+        completeButton.style.marginTop = "10px"
+        completeButton.style.color="black"
+        // completeButton.style.backgroundColor="#fff"
+        completeButton.style.height = "30px"
+        completeButton.style.borderRadius = "10px"
+        completeButton.style.border = "none"
+
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.addEventListener("click", () => editTask(index));
+        editButton.style.display = "block"
+        editButton.style.width = "150px"
+        editButton.style.marginTop = "10px"
+        editButton.style.backgroundColor="#fff"
+        editButton.style.color="black"
+        editButton.style.height = "30px"
+        editButton.style.borderRadius = "10px"
+        editButton.style.border = "none"
+
+        const editForm = document.createElement("form");
+        editForm.id = `editForm-${index}`;
+        editForm.className = "edit-form";
+        editForm.style.flexDirection = "column";
+        editForm.style.position = "fixed"
+        editForm.style.top = "200px"
+        editForm.style.left = "500px"
+        editForm.style.backgroundColor ="#9564F3"
+        editForm.style.paddingTop = "50px"
+        editForm.style.borderRadius= "20px"
+        editForm.style.width = "600px"
+        editForm.style.height = "200px"
+
+        
+
+        const editInput = document.createElement("input");
+        editInput.id = `editInput-${index}`;
+        editInput.type = "text";
+        editInput.style.display = "block";
+        editInput.style.width = "400px"
+        editInput.style.height = "50px"
+        editInput.style.border = "none"
+        editInput.style.marginBottom="60px"
+        editInput.style.margin = "auto"
+
+        const updateButton = document.createElement("button");
+        updateButton.textContent = "Update";
+        updateButton.type = "button";
+        updateButton.addEventListener("click", () => updateTask(index));
+        updateButton.style.marginLeft = "100px"
+
+
+        const closeButton = document.createElement("button");
+        closeButton.textContent = "Close";
+        closeButton.type = "button";
+        closeButton.addEventListener("click", () => closeEditForm(index));
+        closeButton.style.marginTop = "30px"
+
+        editForm.appendChild(editInput);
+        editForm.appendChild(updateButton);
+        editForm.appendChild(closeButton);
+
+        taskItem.appendChild(taskDescription);
+        taskItem.appendChild(status);
+        taskItem.appendChild(removeButton);
+        taskItem.appendChild(completeButton);
+        taskItem.appendChild(editButton);
+        taskItem.appendChild(editForm);
+
+        taskList.appendChild(taskItem);
+      });
+    }
+  </script>
+</body>
+</html>

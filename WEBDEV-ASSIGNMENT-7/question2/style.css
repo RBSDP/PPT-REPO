@@ -1,0 +1,53 @@
+body{
+    background-color: #3C329A;
+}
+h1{
+    font-size: 100px;
+    color: #1E194D;
+    display: flex;
+    font-weight: 900;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 40px;
+}
+
+.clock{
+    
+    height: 200px;
+    background-color:#6758F6;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.clock span{
+    display: inline-block;
+    font-size: 80px;
+    width: 100px;
+    text-align: center;
+    position: relative;
+}
+
+.clock span::after{
+    font-size: 26px;
+    position: absolute;
+    bottom: -30px;
+    left: 20%;
+}
+
+#hts::after{
+    content: "Hours";
+
+}
+#min::after{
+    content: "mins";
+    padding-left: 5px;
+}
+#sec::after{
+    content: "sec";
+    padding-left: 15px;
+}
