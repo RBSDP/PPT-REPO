@@ -1,0 +1,46 @@
+Prop drilling is a situation in React where data needs to be passed through multiple levels of nested components via props, even though intermediate components do not actually need that data. This can lead to code clutter, reduced maintainability, and can make it harder to refactor or add new components in the future.
+
+Here's an example to illustrate prop drilling:
+
+```jsx
+const App = () => {
+  const data = 'Some data';
+
+  return (
+    <div>
+      <ComponentA data={data} />
+    </div>
+  );
+};
+
+const ComponentA = ({ data }) => {
+  return (
+    <div>
+      <ComponentB data={data} />
+    </div>
+  );
+};
+
+const ComponentB = ({ data }) => {
+  return (
+    <div>
+      <ComponentC data={data} />
+    </div>
+  );
+};
+
+const ComponentC = ({ data }) => {
+  return <div>{data}</div>;
+};
+```
+
+In this example, `data` needs to be passed down from `App` to `ComponentA`, then to `ComponentB`, and finally to `ComponentC`. However, `ComponentB` does not actually use the `data` prop, but it still needs to receive and pass it down to `ComponentC` due to the nesting structure.
+
+To avoid prop drilling and make data accessible to components that need it without explicitly passing it through intermediate components, there are a few techniques available:
+
+1. Context API: React's Context API allows you to create a context and provide values to it. Components can then access those values without the need for explicit prop passing. Context provides a way to share data across the component tree without prop drilling.
+2. Redux: Redux is a state management library that provides a global store for managing application state. With Redux, you can store data in a central store and access it from any component without prop drilling.
+3. React Query: React Query is a data-fetching library that provides a global state management solution specifically designed for handling asynchronous data fetching. It abstracts away the need for prop drilling by managing the data fetching and caching automatically.
+4. Custom Hooks: You can create custom hooks to encapsulate shared logic or data and make it accessible to components without prop drilling. Custom hooks allow you to abstract away the complexity of managing and passing props across components.
+
+By using these techniques, you can avoid prop drilling and ensure that components can access the required data without the need to pass it explicitly through intermediate components. This promotes cleaner code, better maintainability, and easier scalability of your React application.
